@@ -552,3 +552,11 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Ko-fi 임베드 (결론 아래) */
+.fml-kofi {
+  margin-top: clamp(24px, 3.5vw, 36px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
