@@ -116,3 +116,27 @@
 .swatch--s {
   background: var(--gray-stroke);
 }
+
+/* ---- Ko-fi 후원 버튼 (헤더 우측) ---- */
+.kofi {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+/* 위젯 기본 마진 제거 + 54px 헤더에 맞게 축소 */
+.kofi .btn-container {
+  display: flex;
+}
+
+.kofi .kofi-button {
+  margin: 0 !important;
+  transform: scale(0.82);
+  transform-origin: right center;
+}
+
+@media (max-width: 640px) {
+  .kofi .kofi-button {
+    transform: scale(0.72);
+  }
+}

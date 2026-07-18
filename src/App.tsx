@@ -5,6 +5,7 @@ import { Deployments } from './sections/Deployments'
 import { ProofPoints } from './sections/ProofPoints'
 import { Formula2026 } from './sections/Formula2026'
 import { SourcesSection } from './sections/Sources'
+import { Kofi } from './components/Kofi'
 import './app.css'
 
 const NAV: [string, string][] = [
@@ -34,6 +35,7 @@ export default function App() {
               </a>
             ))}
           </nav>
+          <Kofi />
         </div>
       </header>
       <main id="top">
