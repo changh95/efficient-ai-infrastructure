@@ -1,0 +1,118 @@
+/* ---- 상단 액센트 바: prefill 1 : decode 2 ---- */
+.accent-bar {
+  height: 4px;
+  background: linear-gradient(90deg, var(--coral) 0 33.3%, var(--teal) 33.3% 100%);
+}
+
+/* ---- 헤더 ---- */
+.site-head {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: color-mix(in srgb, var(--paper) 86%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+
+.site-head-in {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  height: 54px;
+}
+
+.brand {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.brand span {
+  color: var(--ink-3);
+  margin: 0 4px;
+}
+
+.brand em {
+  font-style: normal;
+  color: var(--ink-2);
+  font-weight: 500;
+}
+
+.site-nav {
+  display: flex;
+  gap: clamp(10px, 2vw, 22px);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.site-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.site-nav a {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-2);
+  text-decoration: none;
+  white-space: nowrap;
+  padding: 4px 1px;
+}
+
+.site-nav a:hover {
+  color: var(--ink);
+}
+
+@media (max-width: 640px) {
+  .brand-sub {
+    display: none;
+  }
+}
+
+/* ---- 푸터 ---- */
+.site-foot {
+  border-top: 2px solid var(--ink);
+  padding: 30px 0 56px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.9;
+  color: var(--ink-2);
+}
+
+.site-foot p {
+  margin: 0 0 6px;
+}
+
+.site-foot-legend {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.swatch {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  border-radius: 2.5px;
+}
+
+.swatch:not(:first-child) {
+  margin-left: 14px;
+}
+
+.swatch--p {
+  background: var(--coral);
+}
+
+.swatch--d {
+  background: var(--teal);
+}
+
+.swatch--s {
+  background: var(--gray-stroke);
+}

@@ -1,0 +1,515 @@
+/* ============================================================
+   §05 Formula2026 (fml-) — 2026년의 공식: PD disaggregation + MTP
+   coral = prefill 전용 · teal = decode 전용 · gray = 공유 인프라
+   ============================================================ */
+
+/* ---- 두 기둥 ---- */
+.fml-pillars {
+  display: grid;
+  grid-template-columns: 1fr 48px 1fr;
+  gap: 12px;
+  align-items: stretch;
+}
+
+.fml-plus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-style: italic;
+  font-size: 30px;
+  color: var(--ink-3);
+}
+
+.fml-pillar {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-top: 2px solid var(--ink);
+  border-radius: var(--radius);
+  padding: clamp(18px, 2.6vw, 26px);
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.fml-pillar-tag {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  margin: 0;
+}
+
+.fml-pillar-tag::before {
+  content: '';
+  flex: 0 0 auto;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+}
+
+/* PD disaggregation = 두 페이즈 모두에 관한 기둥 → coral/teal 병기 마커 */
+.fml-pillar--pd .fml-pillar-tag::before {
+  background: linear-gradient(135deg, var(--coral) 0 50%, var(--teal) 50% 100%);
+}
+
+/* MTP = 디코드 측 가속 → teal 마커 */
+.fml-pillar--mtp .fml-pillar-tag::before {
+  background: var(--teal);
+}
+
+.fml-pillar-title {
+  font-size: clamp(20px, 2.5vw, 25px);
+  font-weight: 900;
+  margin: -5px 0 0;
+}
+
+.fml-pillar-body {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.75;
+  color: var(--ink-2);
+}
+
+.fml-pillar-key {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.75;
+  color: var(--ink);
+  border-top: 1px dotted var(--line-strong);
+  padding-top: 11px;
+}
+
+/* 세 가지 해제 포인트 */
+.fml-points {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.fml-points li {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--ink-2);
+  padding: 9px 0;
+  border-top: 1px dotted var(--line-strong);
+}
+
+.fml-points li:last-child {
+  padding-bottom: 0;
+}
+
+.fml-points li strong {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+/* 기본값이 된 프레임워크 목록 */
+.fml-frameworks {
+  margin-top: auto;
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+}
+
+.fml-frameworks-cap {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin: 0 0 8px;
+}
+
+.fml-frameworks-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 16px;
+}
+
+.fml-frameworks-list li {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--ink-2);
+  padding-left: 14px;
+  position: relative;
+}
+
+.fml-frameworks-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 6px;
+  height: 6px;
+  border: 1.5px solid var(--ink-3);
+  border-radius: 2px;
+}
+
+.fml-frameworks-list .m {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* MTP 스탯 페어 */
+.fml-mtp-stats {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 2px solid var(--ink);
+}
+
+.fml-mtp-stat {
+  padding: 10px 14px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.fml-mtp-stat + .fml-mtp-stat {
+  padding-left: 14px;
+  border-left: 1px solid var(--line);
+}
+
+.fml-mtp-stat dt {
+  order: 2;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+
+.fml-mtp-stat dd {
+  order: 1;
+  margin: 0;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: clamp(21px, 2.6vw, 28px);
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+}
+
+/* ---- 실리콘 카드 (Rubin CPX) ---- */
+.fml-silicon {
+  margin-top: 12px;
+  padding: clamp(18px, 2.6vw, 26px);
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: clamp(18px, 3vw, 34px);
+  align-items: center;
+}
+
+.fml-silicon-kicker {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  margin: 0 0 8px;
+}
+
+.fml-silicon-title {
+  font-size: clamp(19px, 2.4vw, 24px);
+  font-weight: 900;
+  margin: 0 0 10px;
+}
+
+.fml-silicon-text p:last-child {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.78;
+  color: var(--ink-2);
+}
+
+/* 랙 인라인 비주얼 — 랙 컨테이너는 공유 인프라(gray) */
+.fml-rack {
+  margin: 0;
+  border: 1.5px dashed var(--gray-stroke);
+  border-radius: var(--radius-sm);
+  padding: 13px;
+  background: color-mix(in srgb, var(--gray-bg) 62%, transparent);
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.fml-rack-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.11em;
+  color: var(--ink-2);
+  text-align: center;
+}
+
+.fml-rack-row {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+}
+
+.fml-die {
+  flex: 1 1 0;
+  min-width: 0;
+  border: 1.5px solid;
+  border-radius: var(--radius-sm);
+  background: var(--card);
+  padding: 11px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 7px;
+}
+
+.fml-die--prefill {
+  border-color: var(--coral);
+  background: color-mix(in srgb, var(--coral-bg) 70%, var(--card));
+}
+
+.fml-die--decode {
+  border-color: var(--teal);
+  background: color-mix(in srgb, var(--teal-bg) 70%, var(--card));
+}
+
+.fml-die-tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  padding: 2px 7px;
+  border-radius: 3px;
+  color: #fff;
+}
+
+.fml-die--prefill .fml-die-tag {
+  background: var(--coral);
+}
+
+.fml-die--decode .fml-die-tag {
+  background: var(--teal);
+}
+
+.fml-die-name {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.2;
+}
+
+.fml-die-mem {
+  width: 100%;
+  display: grid;
+  gap: 3px;
+}
+
+/* GDDR7 — 넓게 펼친 외곽선 모듈 1열 */
+.fml-die--prefill .fml-die-mem {
+  grid-template-columns: repeat(8, 1fr);
+}
+
+.fml-die--prefill .fml-die-mem i {
+  height: 10px;
+  border: 1.5px solid var(--coral);
+  border-radius: 2px;
+  background: transparent;
+}
+
+/* HBM — 촘촘히 쌓인 솔리드 스택 2열x4 */
+.fml-die--decode .fml-die-mem {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.fml-die--decode .fml-die-mem i {
+  height: 10px;
+  border-radius: 2px;
+  background: var(--teal);
+}
+
+.fml-die-spec {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  line-height: 1.4;
+}
+
+.fml-die--prefill .fml-die-spec {
+  color: var(--coral-ink);
+}
+
+.fml-die--decode .fml-die-spec {
+  color: var(--teal-ink);
+}
+
+.fml-die-desc {
+  width: 100%;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--ink-2);
+  border-top: 1px dotted var(--line-strong);
+  padding-top: 6px;
+  margin-top: auto;
+}
+
+.fml-rack-arrow {
+  flex: 0 0 auto;
+  align-self: center;
+  width: 46px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 0 2px;
+}
+
+.fml-rack-arrow span {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--ink-2);
+}
+
+.fml-rack-arrow i {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--gray-stroke);
+  position: relative;
+}
+
+.fml-rack-arrow i::after {
+  content: '';
+  position: absolute;
+  right: -1px;
+  top: -4px;
+  border-left: 8px solid var(--gray-stroke);
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+}
+
+/* ---- 마무리 선언 ---- */
+.fml-closing {
+  margin-top: clamp(36px, 5vw, 60px);
+  border-top: 2px solid var(--ink);
+  padding-top: clamp(18px, 3vw, 28px);
+}
+
+.fml-closing-cap {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  margin: 0 0 12px;
+}
+
+.fml-closing-quote {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(20px, 3vw, 30px);
+  line-height: 1.62;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+/* ---- 반응형 ---- */
+@media (max-width: 980px) {
+  .fml-pillars {
+    grid-template-columns: 1fr;
+  }
+
+  .fml-plus {
+    padding: 2px 0;
+  }
+
+  .fml-silicon {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .fml-frameworks-list {
+    grid-template-columns: 1fr;
+  }
+
+    .fml-rack-row {
+    gap: 6px;
+  }
+
+  .fml-rack-arrow {
+    width: 30px;
+  }
+
+  .fml-die--prefill .fml-die-mem,
+  .fml-die--decode .fml-die-mem {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ---- Tenstorrent Galaxy 카드 ---- */
+.fml-tt {
+  margin-top: clamp(24px, 3.5vw, 36px);
+  padding: clamp(18px, 2.6vw, 28px);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.fml-tt-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(16px, 2.4vw, 28px);
+}
+
+.fml-tt-item {
+  border-top: 2px solid var(--ink);
+  padding-top: 12px;
+}
+
+.fml-tt-stat {
+  margin: 0 0 6px;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: clamp(20px, 2.4vw, 27px);
+  letter-spacing: -0.02em;
+}
+
+.fml-tt-title {
+  margin: 0 0 10px;
+  font-size: clamp(18px, 2.2vw, 22px);
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.fml-tt-body {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--ink-2);
+}
+
+.fml-tt-extra {
+  margin: 0;
+  padding-top: 14px;
+  border-top: 1px dotted var(--line-strong);
+  font-size: 14.5px;
+  line-height: 1.85;
+  color: var(--ink-2);
+}
+
+@media (max-width: 860px) {
+  .fml-tt-grid {
+    grid-template-columns: 1fr;
+  }
+}

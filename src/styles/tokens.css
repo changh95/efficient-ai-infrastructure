@@ -1,0 +1,51 @@
+/* ============================================================
+   Design tokens — "기술 도시에(technical dossier)" 시스템
+   의미 색상 규칙 (절대 위반 금지):
+   - coral 계열 = prefill 전용
+   - teal 계열 = decode 전용
+   - gray 계열 = 공유 인프라 (라우터/스케줄러/KV 스토어)
+   coral/teal을 장식 목적으로 쓰지 않는다.
+   ============================================================ */
+:root {
+  /* surfaces */
+  --paper: #faf8f3;
+  --paper-2: #f4f1e8;
+  --card: #ffffff;
+
+  /* ink */
+  --ink: #1c1b18;
+  --ink-2: #57554f;
+  --ink-3: #6e6b64;
+  --line: #e3dfd3;
+  --line-strong: #c9c4b4;
+
+  /* semantic: prefill */
+  --coral: #d85a30;
+  --coral-bg: #faece7;
+  --coral-ink: #712b13;
+
+  /* semantic: decode */
+  --teal: #1d9e75;
+  --teal-bg: #e1f5ee;
+  --teal-ink: #085041;
+
+  /* semantic: shared infra */
+  --gray-bg: #f1efe8;
+  --gray-stroke: #5f5e5a;
+
+  /* hyperlink (각주 출처 링크) */
+  --link: #1d4ed8;
+
+  /* type */
+  --font-display: 'Noto Serif KR', 'Apple SD Gothic Neo', serif;
+  --font-body:
+    'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont,
+    'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* layout */
+  --maxw: 1120px;
+  --pad-x: clamp(20px, 5vw, 48px);
+  --radius: 10px;
+  --radius-sm: 5px;
+}

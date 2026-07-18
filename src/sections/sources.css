@@ -1,0 +1,189 @@
+/* ============================================================
+   출처 (src-) — 용어집 아코디언 + 4그룹 출처 리스트
+   ============================================================ */
+
+/* ---- 용어집 아코디언 ---- */
+.src-glossary {
+  margin-bottom: clamp(30px, 4.5vw, 46px);
+}
+
+.src-glossary summary {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 14px 18px;
+  min-height: 48px;
+  cursor: pointer;
+}
+
+.src-gloss-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 17px;
+}
+
+.src-gloss-count {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--ink-3);
+}
+
+.src-gloss-hint {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--ink-3);
+  white-space: nowrap;
+}
+
+.src-gloss-hint::after {
+  content: '+ 펼치기';
+}
+
+.src-glossary[open] .src-gloss-hint::after {
+  content: '− 접기';
+}
+
+.src-glossary[open] summary {
+  border-bottom: 1px solid var(--line);
+}
+
+.src-dl {
+  margin: 0;
+  padding: clamp(16px, 2.5vw, 22px) 18px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px 32px;
+}
+
+.src-def {
+  border-left: 2px solid var(--line-strong);
+  padding-left: 12px;
+}
+
+.src-def dt {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.src-def dd {
+  margin: 4px 0 0;
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: var(--ink-2);
+}
+
+/* ---- 출처 그룹 ---- */
+.src-group {
+  margin-top: clamp(28px, 4vw, 40px);
+}
+
+.src-group-head {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 9px;
+}
+
+.src-group-no {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--paper);
+  background: var(--ink);
+  padding: 2px 8px;
+  border-radius: 3px;
+}
+
+.src-group-title {
+  font-size: 18.5px;
+  font-weight: 700;
+}
+
+.src-group-desc {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--ink-3);
+}
+
+/* 2차 보도 경고 — chip--reported의 점선 문법을 잇는다 */
+.src-group-note {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ink-3);
+  border: 1px dashed var(--ink-3);
+  border-radius: 999px;
+  padding: 2px 10px;
+  white-space: nowrap;
+}
+
+/* ---- 링크 리스트 (2열) ---- */
+.src-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 40px;
+}
+
+.src-item {
+  border-bottom: 1px dotted var(--line);
+}
+
+.src-link {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 11px 2px;
+  min-height: 44px;
+  text-decoration: none;
+}
+
+.src-t {
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.src-link:hover .src-t {
+  text-decoration: underline;
+  text-decoration-color: var(--line-strong);
+  text-underline-offset: 3px;
+}
+
+.src-d {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-3);
+  white-space: nowrap;
+}
+
+.src-link:hover .src-d {
+  color: var(--ink);
+}
+
+/* ---- 반응형 ---- */
+@media (max-width: 720px) {
+  .src-dl,
+  .src-list {
+    grid-template-columns: 1fr;
+  }
+
+  .src-group-note {
+    margin-left: 0;
+  }
+
+  .src-link {
+    flex-direction: column;
+    gap: 2px;
+  }
+}

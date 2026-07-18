@@ -1,0 +1,299 @@
+/* ============================================================
+   §01 서사 (Narrative) — 접두사 nar-
+   장부 공개 카드 → 32:320 비대칭 바 → 수렴 타임라인
+   coral = prefill · teal = decode · gray = 공유 인프라 (의미 색상만)
+   ============================================================ */
+
+.nar-versus {
+  margin-bottom: clamp(24px, 3.5vw, 36px);
+}
+
+/* ---- 장부 카드 (마진 공개) ---- */
+.nar-ledger {
+  padding: clamp(16px, 2.4vw, 24px);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.nar-ledger-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 12px;
+  flex-wrap: wrap;
+}
+
+.nar-ledger-date {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--ink-2);
+}
+
+.nar-ledger-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 2px solid var(--ink);
+}
+
+.nar-fig {
+  padding: 12px 14px 2px 0;
+}
+
+.nar-fig + .nar-fig {
+  padding-left: 14px;
+  border-left: 1px solid var(--line);
+}
+
+.nar-fig-num {
+  display: block;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: clamp(20px, 2.6vw, 29px);
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+}
+
+.nar-fig--key .nar-fig-num {
+  font-weight: 700;
+  font-size: clamp(23px, 3vw, 33px);
+}
+
+.nar-fig-label {
+  display: block;
+  margin-top: 2px;
+  font-size: 12px;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+
+.nar-ledger-sub {
+  border-top: 1px dotted var(--line-strong);
+  padding-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 20px;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  line-height: 1.6;
+  color: var(--ink-2);
+}
+
+.nar-sub b {
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--ink);
+}
+
+.nar-sub--p,
+.nar-sub--p b {
+  color: var(--coral-ink);
+}
+
+.nar-sub--d,
+.nar-sub--d b {
+  color: var(--teal-ink);
+}
+
+/* ---- 본문 문단 ---- */
+.nar-para {
+  margin: 0 0 1.1em;
+}
+
+/* ---- 32 : 320 비대칭 바 ---- */
+.nar-ratio {
+  margin: clamp(18px, 2.6vw, 26px) 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.nar-ratio-bar {
+  display: flex;
+  height: 36px;
+  border: 1px solid var(--ink);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.nar-ratio-seg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.nar-ratio-seg--p {
+  flex: 32 1 0;
+  background: var(--coral);
+}
+
+.nar-ratio-seg--d {
+  flex: 320 1 0;
+  background: var(--teal);
+  border-left: 2px solid var(--card);
+}
+
+.nar-ratio-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 22px;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  line-height: 1.6;
+  color: var(--ink-2);
+}
+
+.nar-sw {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  margin-right: 6px;
+  vertical-align: -1px;
+}
+
+.nar-sw--p {
+  background: var(--coral);
+}
+
+.nar-sw--d {
+  background: var(--teal);
+}
+
+.nar-ratio-cap {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.55;
+  color: var(--ink-2);
+  border-top: 1px dotted var(--line-strong);
+  padding-top: 8px;
+}
+
+/* ---- 타임라인 ---- */
+.nar-tl-head {
+  margin-top: clamp(36px, 5vw, 56px);
+}
+
+.nar-tl-overline {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: var(--ink-3);
+  margin: 0 0 8px;
+}
+
+.nar-tl-title {
+  font-size: clamp(20px, 2.6vw, 26px);
+  font-weight: 900;
+  margin: 0 0 10px;
+}
+
+.nar-timeline {
+  list-style: none;
+  margin: clamp(16px, 2.4vw, 24px) 0 0 6px;
+  padding: 4px 0 4px 26px;
+  border-left: 2px solid var(--line-strong);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 3vw, 30px);
+}
+
+.nar-tl-item {
+  position: relative;
+}
+
+/* 레일 위의 점 — 레일 중심(-27px)에 맞춘다 */
+.nar-tl-item::before {
+  content: '';
+  position: absolute;
+  left: -34px;
+  top: 5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--paper);
+  border: 2px solid var(--ink);
+}
+
+.nar-tl-item--key::before {
+  background: var(--ink);
+}
+
+.nar-tl-date {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--ink-3);
+  margin-bottom: 2px;
+}
+
+.nar-tl-item--key .nar-tl-date {
+  color: var(--ink);
+}
+
+.nar-tl-name {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 16.5px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.nar-tl-item--key .nar-tl-name {
+  font-size: 18.5px;
+}
+
+.nar-tl-desc {
+  margin: 4px 0 0;
+  font-size: 14.5px;
+  line-height: 1.75;
+  color: var(--ink-2);
+}
+
+/* ---- 마무리 ---- */
+.nar-outro {
+  margin: clamp(32px, 4.5vw, 48px) 0 0;
+  padding-top: 18px;
+  border-top: 1px dotted var(--line-strong);
+}
+
+/* ---- 반응형 ---- */
+@media (max-width: 720px) {
+  .nar-ledger-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nar-fig {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .nar-fig + .nar-fig {
+    padding-left: 0;
+    border-left: none;
+  }
+
+  .nar-fig:last-child {
+    border-bottom: none;
+    padding-bottom: 2px;
+  }
+
+  .nar-ratio-bar {
+    height: 30px;
+  }
+
+  .nar-ratio-seg {
+    font-size: 10px;
+  }
+}

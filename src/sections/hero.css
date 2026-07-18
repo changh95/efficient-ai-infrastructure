@@ -1,0 +1,110 @@
+.hero {
+  padding: clamp(44px, 7vw, 88px) 0 clamp(44px, 6vw, 76px);
+}
+
+.hero-kicker {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: var(--ink-2);
+  margin: 0;
+}
+
+.hero-kicker::before {
+  content: '';
+  width: 36px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--coral), var(--teal));
+}
+
+/* 데스크톱에서 한 줄에 들어가도록 사이징 — 좁은 화면에선 자연 줄바꿈 */
+.hero-title {
+  font-size: clamp(29px, 3.2vw, 46px);
+  font-weight: 900;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  margin: 20px 0 20px;
+}
+
+.hero-nb {
+  white-space: nowrap;
+}
+
+.hero-strike {
+  text-decoration: line-through;
+  text-decoration-color: color-mix(in srgb, var(--coral) 78%, transparent);
+  text-decoration-thickness: 0.075em;
+  color: var(--ink-3);
+}
+
+.hero-lede {
+  font-size: clamp(16.5px, 2.1vw, 19px);
+  line-height: 1.85;
+  color: var(--ink-2);
+  margin: 0;
+}
+
+/* ---- 방식 1 → 방식 2 순차 비교 ---- */
+.hero-duel {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  margin-top: clamp(30px, 4.5vw, 48px);
+}
+
+/* 방식 1 다이어그램은 "심플"하게 작게, 방식 2는 전폭으로 — 규모 차이가 곧 메시지.
+   해설 텍스트는 두 방식 모두 컨테이너 끝까지 흐른다. */
+.hero-duel-col--before .mxf {
+  max-width: 720px;
+}
+
+.hero-duel-no {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 3px 9px;
+  border-radius: 3px;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+
+/* 다이어그램 아래 풀어 쓴 해설 */
+.hero-duel-note {
+  margin: 12px 0 0;
+  font-size: 15.5px;
+  line-height: 1.85;
+  color: var(--ink-2);
+}
+
+.hero-duel-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  margin: 0 0 9px;
+}
+
+.hero-duel-label::before {
+  content: '';
+  flex: 0 0 auto;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+}
+
+.hero-duel-label--before::before {
+  background: var(--ink);
+}
+
+.hero-duel-label--after::before {
+  background: linear-gradient(135deg, var(--coral) 0 50%, var(--teal) 50% 100%);
+}
+
