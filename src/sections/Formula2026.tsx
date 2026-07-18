@@ -176,10 +176,25 @@ export function Formula2026() {
 
       <div className="fml-tt card">
         <div className="fml-tt-head">
-          <p className="fml-silicon-kicker">이 공식을 가장 저렴하게 조립하는 방법</p>
-          <h3 className="fml-silicon-title">
-            Tenstorrent Blackhole Galaxy — 초고속 추론을 위한 NPU 서버가 시장을 바꾼다
-          </h3>
+          <div className="fml-tt-head-text">
+            <p className="fml-silicon-kicker">이 공식을 가장 저렴하게 조립하는 방법</p>
+            <h3 className="fml-silicon-title">
+              Tenstorrent Blackhole Galaxy — 초고속 추론을 위한 NPU 서버가 시장을 바꾼다
+            </h3>
+          </div>
+          <a
+            className="fml-tt-photo"
+            href="https://tenstorrent.com/checkout?from=/en/hardware/galaxy"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <img
+              src={`${import.meta.env.BASE_URL}tt-galaxy.jpg`}
+              alt="랙에 장착된 Tenstorrent Galaxy 서버"
+              loading="lazy"
+            />
+            <span>Galaxy 구매하기 →</span>
+          </a>
         </div>
         <div className="fml-tt-grid">
           <div className="fml-tt-item">

@@ -10,7 +10,22 @@ import './deployments.css'
 type Filter = 'all' | Family
 
 const FAMILIES: Family[] = ['deepseek', 'kimi', 'glm']
-const CONFIDENCES: Confidence[] = ['primary', 'reproduction', 'benchmark', 'reported']
+const CONFIDENCES: Confidence[] = ['primary', 'reproduction', 'benchmark', 'reported', 'internal']
+
+/** 값 문자열의 **텍스트** 를 볼드+밑줄로 렌더링 */
+function fmt(v: string) {
+  const parts = v.split(/\*\*(.+?)\*\*/g)
+  if (parts.length === 1) return v
+  return parts.map((p, i) =>
+    i % 2 === 1 ? (
+      <strong className="dep-em" key={i}>
+        {p}
+      </strong>
+    ) : (
+      p
+    ),
+  )
+}
 
 export function Deployments() {
   const [filter, setFilter] = useState<Filter>('all')
@@ -102,7 +117,7 @@ export function Deployments() {
                     {d.specs.map((s, i) => (
                       <div className="dep-kv-row" key={i}>
                         <dt>{s.label}</dt>
-                        <dd>{s.value}</dd>
+                        <dd>{fmt(s.value)}</dd>
                       </div>
                     ))}
                   </dl>
@@ -114,7 +129,7 @@ export function Deployments() {
                       {d.perf.map((p, i) => (
                         <div className="dep-kv-row" key={i}>
                           <dt>{p.label}</dt>
-                          <dd>{p.value}</dd>
+                          <dd>{fmt(p.value)}</dd>
                         </div>
                       ))}
                     </dl>
@@ -126,19 +141,19 @@ export function Deployments() {
                     <dl className="dep-kv">
                       <div className="dep-kv-row">
                         <dt>1M 토큰당 비용</dt>
-                        <dd>{d.metrics.cost}</dd>
+                        <dd>{fmt(d.metrics.cost)}</dd>
                       </div>
                       <div className="dep-kv-row">
                         <dt>Decode tok/s/유저</dt>
-                        <dd>{d.metrics.tsu}</dd>
+                        <dd>{fmt(d.metrics.tsu)}</dd>
                       </div>
                       <div className="dep-kv-row">
                         <dt>GPU당 tok/s</dt>
-                        <dd>{d.metrics.tpg}</dd>
+                        <dd>{fmt(d.metrics.tpg)}</dd>
                       </div>
                       <div className="dep-kv-row">
                         <dt>Batch size</dt>
-                        <dd>{d.metrics.batch}</dd>
+                        <dd>{fmt(d.metrics.batch)}</dd>
                       </div>
                     </dl>
                   </div>

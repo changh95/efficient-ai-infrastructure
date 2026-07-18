@@ -393,3 +393,11 @@
     padding: 10px 14px 12px;
   }
 }
+
+/* **강조** 마커 — 볼드 + 밑줄 */
+.dep-em {
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
