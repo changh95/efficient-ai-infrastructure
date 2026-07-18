@@ -215,7 +215,7 @@ export function SourcesSection() {
       lede={
         <>
           본문 각주가 가리키는 원문의 전체 목록이다.
-          <br />
+          <span className="br" aria-hidden="true" />
           신뢰도 순으로 네 묶음으로 나눴다 — 1차 자료를 우선하고, 2차 보도는 재검증
           전에는 단독 근거로 쓰지 않는다.
         </>

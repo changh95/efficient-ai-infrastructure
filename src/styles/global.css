@@ -210,19 +210,23 @@ svg {
 }
 
 
-/* 모바일: 문장 단위 <br/> 줄바꿈에 여백을 주어 문장 사이를 띄운다.
-   데스크톱에서는 문장이 대체로 한 줄씩이라 line-height로 충분하다. */
+/* 문장 단위 줄바꿈 스페이서 — <br/>과 달리 모든 브라우저(iOS Safari 포함)에서
+   높이를 제어할 수 있다. 데스크톱에선 줄바꿈만, 모바일에선 문장 사이를 띄운다. */
+.br {
+  display: block;
+  height: 0;
+}
+
+.br--gap {
+  height: 0.9em;
+}
+
 @media (max-width: 720px) {
-  .lede br,
-  .hero-lede br,
-  .hero-duel-note br,
-  .nar-para br,
-  .nar-outro br,
-  .phy-block-lede br,
-  .dep-outro br,
-  .fml-closing-quote br {
-    content: '';
-    display: block;
-    margin-top: 0.65em;
+  .br {
+    height: 0.7em;
+  }
+
+  .br--gap {
+    height: 1.3em;
   }
 }

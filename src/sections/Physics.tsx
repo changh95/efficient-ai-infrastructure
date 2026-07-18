@@ -102,7 +102,7 @@ export function Physics() {
         <>
           <span className="hl-p">Prefill</span>은 연산을 태우고(compute-bound),{' '}
           <span className="hl-d">Decode</span>는 HBM 대역폭을 태운다(memory-bound).
-          <br />두 단계를 같은 GPU에 겹쳐 놓으면 TTFT와 TPOT을 독립적으로 튜닝할 수 없다 —
+          <span className="br" aria-hidden="true" />두 단계를 같은 GPU에 겹쳐 놓으면 TTFT와 TPOT을 독립적으로 튜닝할 수 없다 —
           그리고 MoE 시대에는 이 비대칭이 곧바로 배치 산수가 된다.
         </>
       }
@@ -190,10 +190,10 @@ export function Physics() {
         </div>
         <p className="phy-block-lede">
           프런티어 오픈 모델은 전부 sparse MoE다.
-          <br />
+          <span className="br" aria-hidden="true" />
           Expert는 스텝당 토큰을 충분히 받아야 행렬곱(GEMM)으로 돌고, 모자라면 같은
           하드웨어에서 GEMV(매트릭스 × 벡터 곱연산)로 전락한다.
-          <br />
+          <span className="br" aria-hidden="true" />
           라우팅이 희소할수록 그 문턱은 높아진다.
         </p>
         <div className="phy-routing">
@@ -259,7 +259,7 @@ export function Physics() {
         <p className="phy-block-lede">
           이 네 가지 문제는 서로 독립적이지만, 이 중 하나만 봐도 사실 PD disaggregation을 할
           이유는 충분하다.
-          <br />
+          <span className="br" aria-hidden="true" />
           그리고 max-fit 통합 서빙 노드는 네 가지를 동시에 겪는다.
         </p>
         <div className="phy-fails">

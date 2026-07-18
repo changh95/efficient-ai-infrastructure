@@ -41,9 +41,9 @@ export function Deployments() {
       lede={
         <>
           DeepSeek·Kimi·GLM 세 패밀리의 1차 프로덕션 시스템은 전부 PD disaggregation이다.
-          <br />
+          <span className="br" aria-hidden="true" />
           max-fit 통합 서빙은 개발 박스와 데모에서만 살아남았다.
-          <br />
+          <span className="br" aria-hidden="true" />
           아래는 공개된 배치 기록이다 — 운영자, 토폴로지, 측정치, 출처를 그대로 옮겼다.
         </>
       }
@@ -264,9 +264,9 @@ export function Deployments() {
         </div>
         <p>
           입력이 길어질수록 Prefill 몫이 커지다가, 128K에서는 아예 비율이 뒤집힌다.
-          <br />
+          <span className="br" aria-hidden="true" />
           이것은 결함이 아니라 기능이다.
-          <br />
+          <span className="br" aria-hidden="true" />
           통합 서빙 노드는 물리가 정해 준 비율에 갇히지만, 분리된 풀은 워크로드가 바뀌면 비율을
           다시 맞추고 각자 오토스케일할 수 있다. Dynamo의 SLA 플래너가 하는 일이 정확히
           그것이다

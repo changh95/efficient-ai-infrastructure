@@ -13,7 +13,7 @@ export function Formula2026() {
         <>
           2026년의 추론 인프라는 두 가지로 요약된다 — 구조는 PD disaggregation, Decode 가속은
           MTP.
-          <br />
+          <span className="br" aria-hidden="true" />
           프레임워크는 분리를 기본 배포 패턴으로 굳혔고, 모델은 MTP를 내장하기 시작했고,
           하드웨어 로드맵까지 같은 방향으로 가고 있다.
         </>
@@ -258,7 +258,7 @@ export function Formula2026() {
         <p className="fml-closing-quote">
           2026년에 아직도 PD disaggregation 없이 모델을 노드에 맞춰 넣는 팀은 효율과 성능을 잃고,
           비용은 더 치르고 있다.
-          <br />
+          <span className="br" aria-hidden="true" />
           이제 물어야 할 질문은 &ldquo;모델이 어느 서버에 들어가는가&rdquo;가 아니다.
           &ldquo;어떤 패브릭이 Decode 풀을 넓게 펼치게 해 주는가&rdquo;다.
         </p>

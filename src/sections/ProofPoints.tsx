@@ -20,7 +20,7 @@ export function ProofPoints() {
         <>
           가장 확실한 증거는 같은 하드웨어에서 통합 서빙과 PD disaggregation을 직접 비교한
           측정치다.
-          <br />
+          <span className="br" aria-hidden="true" />
           아래 타일에는 전부 측정 조건이 붙어 있다 — 조건 없이 &lsquo;N배 빨라졌다&rsquo;는
           숫자는 믿으면 안 된다.
         </>

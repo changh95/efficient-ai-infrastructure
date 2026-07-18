@@ -120,18 +120,17 @@ export function Narrative() {
         <>
           2025년 초 DeepSeek V3/R1이 나왔을 때, 수많은 기업들이 저렴한 API 비용을 보고
           경악했다.
-          <br />
+          <span className="br" aria-hidden="true" />
           &lsquo;중국 정부가 주는 보조금을 받으면서, 저렴한 API로 유저를 확보하려는 전략일
           거다&rsquo;라고 다들 생각했다.
-          <br />
-          <br />
+          <span className="br br--gap" aria-hidden="true" />
           그리고 얼마 지나지 않아, DeepSeek은 Open-Source Week를 통해 자신들의 최적화 전략을
           공개했다
           <Fn label="open-infra-index" url={SRC.openInfra} />.
-          <br />
+          <span className="br" aria-hidden="true" />
           많은 기업들이 이 방식을 직접 테스트했고, 저렴한 API 비용은 보조금이 아닌 미친 듯이
           효율적인 AI 모델 서빙에서 온다는 것을 확인했다.
-          <br />그 후, 수많은 AI 기업과 하이퍼스케일러들은 서빙 방식을 전환했다.
+          <span className="br" aria-hidden="true" />그 후, 수많은 AI 기업과 하이퍼스케일러들은 서빙 방식을 전환했다.
         </>
       }
     >
@@ -183,12 +182,12 @@ export function Narrative() {
 
       <p className="nar-para">
         루머는 터무니없는 소리가 아니었다 — 가격이 실제로 통념 밖이었기 때문이다.
-        <br />
+        <span className="br" aria-hidden="true" />
         틀린 것은 답이었다.
-        <br />
+        <span className="br" aria-hidden="true" />
         DeepSeek은 보조금을 받는 게 아니라, 개선된 추론 topology를 통해 추론 효율을 개선한
         것이고 이를 통해 추론 비용을 낮출 수 있던 것이다.
-        <br />
+        <span className="br" aria-hidden="true" />
         V3 기술 보고서 §3.4가 공개한 프로덕션 배치에서 <span className="hl-p">
           Prefill
         </span>{' '}
@@ -196,11 +195,11 @@ export function Narrative() {
         <span className="hl-d">Decode</span> 최소 유닛은{' '}
         <span className="m">40노드 × 8 = 320 GPU</span>다
         <Fn label="V3 §3.4" url={SRC.v3Report} />.
-        <br />
+        <span className="br" aria-hidden="true" />
         같은 모델을 서빙하는 두 풀의 크기가 열 배 차이 나고, 병렬화 구성도{' '}
         <span className="m">EP32</span> 대 <span className="m">EP320</span>으로 다르다
         <Fn label="V3 §3.4" url={SRC.v3Report} />.
-        <br />이 비대칭이 max-fit 단일 노드로는 도달할 수 없는 원가를 만들었다.
+        <span className="br" aria-hidden="true" />이 비대칭이 max-fit 단일 노드로는 도달할 수 없는 원가를 만들었다.
       </p>
 
       <figure
@@ -233,7 +232,7 @@ export function Narrative() {
         <h3 className="nar-tl-title">세상이 분산 추론 인프라를 받아들인 연대기</h3>
         <p className="nar-para">
           루머를 정리한 것은 재현이었다.
-          <br />
+          <span className="br" aria-hidden="true" />
           자체 공개 석 달 뒤 오픈소스 재현이 원가를 검증했고, 그로부터 1년 사이 서빙
           프레임워크와 클라우드 네이티브 스택, GPU 실리콘 로드맵이 차례로 같은 구조를
           채택했다.
@@ -255,7 +254,7 @@ export function Narrative() {
 
       <p className="nar-outro">
         하이퍼스케일러들이 내린 결론은 루머보다 단순했다.
-        <br />싼 이유는 보조금이 아니라 더 나은 인프라였고, 그 핵심은 Prefill과 Decode를
+        <span className="br" aria-hidden="true" />싼 이유는 보조금이 아니라 더 나은 인프라였고, 그 핵심은 Prefill과 Decode를
         서로 다른 풀로 분리해 각자에게 맞는 병렬화와 하드웨어를 주는 것이었다.
       </p>
     </Section>
