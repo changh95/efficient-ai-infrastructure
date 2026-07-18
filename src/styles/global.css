@@ -209,3 +209,20 @@ svg {
   text-decoration-color: var(--link);
 }
 
+
+/* 모바일: 문장 단위 <br/> 줄바꿈에 여백을 주어 문장 사이를 띄운다.
+   데스크톱에서는 문장이 대체로 한 줄씩이라 line-height로 충분하다. */
+@media (max-width: 720px) {
+  .lede br,
+  .hero-lede br,
+  .hero-duel-note br,
+  .nar-para br,
+  .nar-outro br,
+  .phy-block-lede br,
+  .dep-outro br,
+  .fml-closing-quote br {
+    content: '';
+    display: block;
+    margin-top: 0.65em;
+  }
+}
