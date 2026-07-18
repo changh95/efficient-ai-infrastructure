@@ -184,7 +184,7 @@ export function Formula2026() {
           </div>
           <a
             className="fml-tt-photo"
-            href="https://tenstorrent.com/checkout?from=/en/hardware/galaxy"
+            href="https://tenstorrent.com/hardware/galaxy"
             target="_blank"
             rel="noreferrer noopener"
           >
